@@ -86,7 +86,7 @@ shape = SubResource("ConcavePolygonShape3D_5lueg")
 environment = SubResource("Environment_2bx7j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.810512, 0.337002, -0.479061, 0, 0.817899, 0.575362, 0.585722, -0.466338, 0.662917, 0, 8.42502, 0)
+transform = Transform3D(-0.889799, 0.262568, -0.37325, 5.23676e-08, 0.817899, 0.575362, 0.456352, 0.511957, -0.727766, 0, 8.42502, 0)
 shadow_enabled = true
 
 [node name="music" type="AudioStreamPlayer" parent="."]

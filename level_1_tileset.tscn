@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://de40c1qgsyi8s"]
+
+[ext_resource type="PackedScene" uid="uid://cu3y6vfmciq88" path="res://ASSETS/BLENDER/Level1Tileset.glb" id="1_ojjo2"]
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_g228v"]
+resource_local_to_scene = true
+
+[node name="Level1Tileset" instance=ExtResource("1_ojjo2")]
+
+[node name="zweiwand" parent="." index="0"]
+transform = Transform3D(0, 0, 0.5, 0, 0.5, 0, -0.5, 0, 0, 0.5, 0, 0.5)
+metadata/_edit_group_ = true
+
+[node name="dreiwand" parent="." index="1"]
+transform = Transform3D(0, 0, 0.5, 0, 0.5, 0, -0.5, 0, 0, -0.5, 0, -0.5)
+
+[node name="einwand" parent="." index="2"]
+transform = Transform3D(-0.499753, 0, -4.36898e-08, 0, 0.499753, 0, 4.36898e-08, 0, -0.499753, -0.5, 0, 0.5)
+
+[node name="keinwand" parent="." index="3"]
+transform = Transform3D(0.506256, 0, 0, 0, 0.506256, 0, 0, 0, 0.506256, 0.5, 0, 1.5)
+
+[node name="GridMap" type="GridMap" parent="." index="4"]
+transform = Transform3D(1.00546, 0, 0, 0, 1.00546, 0, 0, 0, 1.00546, 0, 0, 0)
+mesh_library = SubResource("MeshLibrary_g228v")
+cell_size = Vector3(1, 1, 1)
