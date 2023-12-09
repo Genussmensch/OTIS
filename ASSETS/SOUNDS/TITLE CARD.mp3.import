@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bga35ded1teoe"
+path="res://.godot/imported/TITLE CARD.mp3-6302c29bfee06d78c4e0f2233e44bc5f.mp3str"
+
+[deps]
+
+source_file="res://ASSETS/SOUNDS/TITLE CARD.mp3"
+dest_files=["res://.godot/imported/TITLE CARD.mp3-6302c29bfee06d78c4e0f2233e44bc5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

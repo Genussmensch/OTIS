@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
-[ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://gun_sprites.png" id="1_wsjox"]
-[ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/PEW.wav" id="3_r448r"]
+[ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://ASSETS/SIGHTS/gun_sprites.png" id="1_wsjox"]
+[ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
 

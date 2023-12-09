@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://becnaq4wrkuq2"
-path.s3tc="res://.godot/imported/tumbler_sprites.png-d1a90a3fc1067466559b29ad5b2c79fe.s3tc.ctex"
+uid="uid://deqvxpakhsfit"
+path.s3tc="res://.godot/imported/monster_sprites.png-c1f4462f1b4448db01059b66da921b7b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://tumbler_sprites.png"
-dest_files=["res://.godot/imported/tumbler_sprites.png-d1a90a3fc1067466559b29ad5b2c79fe.s3tc.ctex"]
+source_file="res://ASSETS/SIGHTS/monster_sprites.png"
+dest_files=["res://.godot/imported/monster_sprites.png-c1f4462f1b4448db01059b66da921b7b.s3tc.ctex"]
 
 [params]
 
