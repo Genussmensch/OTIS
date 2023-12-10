@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
+height = 1.8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
 atlas = ExtResource("1_wsjox")
