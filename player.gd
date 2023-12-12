@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@onready var animated_sprite_2d = $CanvasLayer/GunBase/AnimatedSprite2D
-@onready var ray_cast_3d = $RayCast3D
-@onready var shoot_sound = $ShootSound
+@onready var animated_sprite_2d = $Head/CanvasLayer/GunBase/AnimatedSprite2D
+@onready var ray_cast_3d = $Head/RayCast3D
+@onready var shoot_sound = $Head/ShootSound
 
 
 const SPEED = 5.0
@@ -14,14 +14,14 @@ var dead = false
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done)
-	$CanvasLayer/DeathScreen/Panel/Button.button_up.connect(restart)
+	$Head/CanvasLayer/DeathScreen/Panel/Button.button_up.connect(restart)
 
 func _input(event):
 	if dead:
 		return
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENS
-		rotation_degrees.x -= event.relative.y * MOUSE_SENS
+		#rotation_degrees.x -= event.relative.y * MOUSE_SENS
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
@@ -65,6 +65,6 @@ func shoot_anim_done():
 
 func kill():
 	dead = true
-	$CanvasLayer/DeathScreen.show()
+	$Head/CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
