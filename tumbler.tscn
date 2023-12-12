@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://becnaq4wrkuq2" path="res://ASSETS/SIGHTS/tumbler_sprites.png" id="3_tuvsb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x4756"]
+height = 1.84422
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhjkl"]
 atlas = ExtResource("3_tuvsb")
@@ -86,7 +87,7 @@ animations = [{
 script = ExtResource("1_ctox6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03885, 0)
 shape = SubResource("CapsuleShape3D_x4756")
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]

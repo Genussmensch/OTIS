@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1swih4b5cn"
-path.s3tc="res://.godot/imported/Level1Tiles_atlas_n.png-6abe43b41da1ca6afe21fce1fc7ef5d0.s3tc.ctex"
+uid="uid://bv6sjd6v562en"
+path.s3tc="res://.godot/imported/DemoTiles_atlas_n.png-c72bc31a05017ff59178083e3d8be11f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://ASSETS/BLENDER/Level1Tiles_atlas_n.png"
-dest_files=["res://.godot/imported/Level1Tiles_atlas_n.png-6abe43b41da1ca6afe21fce1fc7ef5d0.s3tc.ctex"]
+source_file="res://ASSETS/BLENDER/DemoTiles_atlas_n.png"
+dest_files=["res://.godot/imported/DemoTiles_atlas_n.png-c72bc31a05017ff59178083e3d8be11f.s3tc.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://ASSETS/BLENDER/Level1Tiles_atlas_n.png"
+roughness/src_normal="res://ASSETS/BLENDER/DemoTiles_atlas_n.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

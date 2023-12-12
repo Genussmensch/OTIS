@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dhnvlu36lv68x"
-path="res://.godot/imported/Level1Tiles.glb-014f4d54f8ecedfe2d91ff9de21013b7.scn"
+uid="uid://denaqefbf4w4j"
+path="res://.godot/imported/DemoTiles.glb-d1054423cb7a1785ed1c9f7e34ec9ecc.scn"
 
 [deps]
 
-source_file="res://ASSETS/BLENDER/Level1Tiles.glb"
-dest_files=["res://.godot/imported/Level1Tiles.glb-014f4d54f8ecedfe2d91ff9de21013b7.scn"]
+source_file="res://ASSETS/BLENDER/DemoTiles.glb"
+dest_files=["res://.godot/imported/DemoTiles.glb-d1054423cb7a1785ed1c9f7e34ec9ecc.scn"]
 
 [params]
 

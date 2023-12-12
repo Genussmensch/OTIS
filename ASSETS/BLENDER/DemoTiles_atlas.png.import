@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://il6qim5hspns"
-path.s3tc="res://.godot/imported/Level1Tileset_atlas.png-ece95f8ac4a8424af578717f625a9e44.s3tc.ctex"
+uid="uid://b36rloxp1qya0"
+path.s3tc="res://.godot/imported/DemoTiles_atlas.png-7672a3e38f238448f439038b14bf56f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://ASSETS/BLENDER/Level1Tileset_atlas.png"
-dest_files=["res://.godot/imported/Level1Tileset_atlas.png-ece95f8ac4a8424af578717f625a9e44.s3tc.ctex"]
+source_file="res://ASSETS/BLENDER/DemoTiles_atlas.png"
+dest_files=["res://.godot/imported/DemoTiles_atlas.png-7672a3e38f238448f439038b14bf56f2.s3tc.ctex"]
 
 [params]
 
