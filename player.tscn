@@ -1,12 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3thxbld6axya"]
+[gd_scene load_steps=14 format=3 uid="uid://d3thxbld6axya"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
 [ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://ASSETS/SIGHTS/gun_sprites.png" id="1_wsjox"]
 [ext_resource type="Texture2D" uid="uid://471eqetbkk04" path="res://ASSETS/SIGHTS/crosshair.png" id="2_4hthw"]
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
-height = 1.8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
 atlas = ExtResource("1_wsjox")
@@ -56,26 +53,29 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clmct"]
+albedo_color = Color(0.890196, 0.501961, 0.541176, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_msug4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
+height = 1.8
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ltc0k")
 
-[node name="Body" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1.18985, 0)
-shape = SubResource("CapsuleShape3D_7xmbu")
-
 [node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.265)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 3
-
-[node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 0.998853, -0.0478735, 0, 0.0478735, 0.998853, 0, 1.5, 0)
-rotation_edit_mode = 2
-near = 0.001
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Head"]
 
@@ -163,3 +163,12 @@ text = "Restart"
 stream = ExtResource("3_r448r")
 volume_db = -9.349
 bus = &"Sfx"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_clmct")
+mesh = SubResource("CapsuleMesh_msug4")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_7xmbu")

@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $Head/CanvasLayer/GunBase/AnimatedSprite2D
 @onready var ray_cast_3d = $Head/RayCast3D
 @onready var shoot_sound = $Head/ShootSound
-
+var mouse_sensitivity = float(0.1)
 
 const SPEED = 5.0
 const MOUSE_SENS = 0.5
@@ -20,7 +20,7 @@ func _input(event):
 	if dead:
 		return
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity * MOUSE_SENS 
 		#rotation_degrees.x -= event.relative.y * MOUSE_SENS
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -33,7 +33,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if dead:
 		return
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
@@ -58,6 +58,7 @@ func shoot():
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
+		print("kill")
 		ray_cast_3d.get_collider().kill()
 
 func shoot_anim_done():
