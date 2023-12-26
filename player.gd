@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $Head/CanvasLayer/GunBase/AnimatedSprite2D
 @onready var ray_cast_3d = $Head/RayCast3D
 @onready var shoot_sound = $Head/ShootSound
+@onready var playerDamage = 50
 var mouse_sensitivity = float(0.1)
 
 const SPEED = 5.0
@@ -57,9 +58,9 @@ func shoot():
 	can_shoot = false
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
-	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
-		print("kill")
-		ray_cast_3d.get_collider().kill()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
+		print("attack")
+		ray_cast_3d.get_collider().takeDamage()
 
 func shoot_anim_done():
 	can_shoot = true

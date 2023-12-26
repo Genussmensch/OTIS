@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3thxbld6axya"]
+[gd_scene load_steps=13 format=3 uid="uid://d3thxbld6axya"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
 [ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://ASSETS/SIGHTS/gun_sprites.png" id="1_wsjox"]
@@ -12,10 +12,6 @@ region = Rect2(0, 0, 512, 512)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rf8j7"]
 atlas = ExtResource("1_wsjox")
 region = Rect2(512, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5lx7v"]
-atlas = ExtResource("1_wsjox")
-region = Rect2(1024, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0btv"]
 atlas = ExtResource("1_wsjox")
@@ -38,9 +34,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rf8j7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5lx7v")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f0btv")
@@ -73,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.265)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.093071, 0)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 3
 
@@ -98,7 +91,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
 animation = &"shoot"
 autoplay = "idle"
-frame = 3
+frame = 2
 frame_progress = 1.0
 
 [node name="Crosshair" type="Sprite2D" parent="Head/CanvasLayer"]

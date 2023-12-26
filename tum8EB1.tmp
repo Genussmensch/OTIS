@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8bdpo62d8wh2"]
+[gd_scene load_steps=15 format=3 uid="uid://c8bdpo62d8wh2"]
 
 [ext_resource type="Script" path="res://tumbler.gd" id="1_bumub"]
 [ext_resource type="AudioStream" uid="uid://bhdvq6s1kins6" path="res://ASSETS/SOUNDS/BREAK.mp3" id="2_ny0sk"]
 [ext_resource type="Texture2D" uid="uid://becnaq4wrkuq2" path="res://ASSETS/SIGHTS/tumbler_sprites.png" id="3_tuvsb"]
-[ext_resource type="AudioStream" uid="uid://78lrd2bkfojf" path="res://ASSETS/SOUNDS/GRUNT.mp3" id="4_arpg4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x4756"]
 height = 1.84422
@@ -103,6 +102,3 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_l0esg")
 animation = &"death"
 autoplay = "idle"
-
-[node name="DamageSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_arpg4")

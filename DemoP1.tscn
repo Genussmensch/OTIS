@@ -94,19 +94,21 @@ stream = ExtResource("2_w2uvk")
 volume_db = -8.764
 
 [node name="Player" parent="." instance=ExtResource("3_4bw3l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.868)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4992, 0.126846, 13.7107)
 
-[node name="tumbler" parent="." instance=ExtResource("4_a5drm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4992, 0, -10.3941)
+[node name="Enemies" type="Node3D" parent="."]
 
-[node name="tumbler2" parent="." instance=ExtResource("4_a5drm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249656, 0, -5.34322)
+[node name="tumbler5" parent="Enemies" instance=ExtResource("4_a5drm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12901, 0, -2.43635)
 
-[node name="tumbler3" parent="." instance=ExtResource("4_a5drm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8271, 0, -15.484)
-
-[node name="tumbler4" parent="." instance=ExtResource("4_a5drm")]
+[node name="tumbler4" parent="Enemies" instance=ExtResource("4_a5drm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7024, -9.53674e-07, -0.221853)
 
-[node name="tumbler5" parent="." instance=ExtResource("4_a5drm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12901, 0, -2.43635)
+[node name="tumbler" parent="Enemies" instance=ExtResource("4_a5drm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4992, 0, -10.3941)
+
+[node name="tumbler2" parent="Enemies" instance=ExtResource("4_a5drm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249656, 0, -5.34322)
+
+[node name="tumbler3" parent="Enemies" instance=ExtResource("4_a5drm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8271, 0, -15.484)
