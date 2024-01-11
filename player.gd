@@ -7,7 +7,6 @@ extends CharacterBody3D
 var mouse_sensitivity = float(0.1)
 
 const SPEED = 5.0
-const MOUSE_SENS = 0.5
 
 var can_shoot = true
 var dead = false
@@ -21,7 +20,7 @@ func _input(event):
 	if dead:
 		return
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * mouse_sensitivity * MOUSE_SENS 
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		#rotation_degrees.x -= event.relative.y * MOUSE_SENS
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -60,7 +59,7 @@ func shoot():
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
 		print("attack")
-		ray_cast_3d.get_collider().takeDamage()
+		ray_cast_3d.get_collider().takeDamage(playerDamage)
 
 func shoot_anim_done():
 	can_shoot = true
