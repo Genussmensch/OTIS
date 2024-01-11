@@ -4,7 +4,8 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $Head/RayCast3D
 @onready var shoot_sound = $Head/ShootSound
 @onready var playerDamage = 50
-var mouse_sensitivity = float(0.1)
+@onready var head = $Head
+@onready var mouse_sensitivity = float(0.3)
 
 const SPEED = 5.0
 
@@ -21,7 +22,7 @@ func _input(event):
 		return
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity
-		#rotation_degrees.x -= event.relative.y * MOUSE_SENS
+		head.rotation_degrees.x -= event.relative.y * mouse_sensitivity
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()

@@ -106,3 +106,6 @@ autoplay = "idle"
 
 [node name="DamageSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_arpg4")
+
+[node name="healthbar" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2591, 0)
