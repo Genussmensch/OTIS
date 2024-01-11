@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="OTIS old"
+config/name="OTIS"
 run/main_scene="res://DemoP1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
