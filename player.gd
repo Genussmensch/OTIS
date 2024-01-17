@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $Head/CanvasLayer/GunBase/AnimatedSprite2D
 @onready var ray_cast_3d = $Head/RayCast3D
 @onready var shoot_sound = $Head/ShootSound
+@onready var click_sound = $Head/ClickSound
 @onready var playerDamage = 50
 @onready var head = $Head
 @onready var mouse_sensitivity = float(0.3)
@@ -11,6 +12,8 @@ const SPEED = 5.0
 
 var can_shoot = true
 var dead = false
+var ammo = 3
+var has_ammo = true
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -55,18 +58,28 @@ func restart():
 func shoot():
 	if !can_shoot:
 		return
+	if !has_ammo:
+		click_sound.play()
+		return
 	can_shoot = false
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
-		print("attack")
 		ray_cast_3d.get_collider().takeDamage(playerDamage)
+	ammocount()
 
 func shoot_anim_done():
 	can_shoot = true
-
+func ammocount():
+	if ammo > 1:
+		ammo -= 1
+	else:
+		ammo = 0
+		has_ammo = false
 func kill():
 	dead = true
 	$Head/CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+func get_ammo():
+	return ammo

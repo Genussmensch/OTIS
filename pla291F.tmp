@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://471eqetbkk04" path="res://ASSETS/SIGHTS/crosshair.png" id="2_4hthw"]
 [ext_resource type="Script" path="res://Head.gd" id="2_8emgk"]
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
-[ext_resource type="Script" path="res://AmmoHUD.gd" id="5_vmacs"]
+[ext_resource type="Script" path="res://Label.gd" id="5_ypn0d"]
 [ext_resource type="AudioStream" uid="uid://df3i4ty7qr23x" path="res://ASSETS/SOUNDS/click.mp3" id="6_lowhq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
@@ -141,12 +141,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
 
-[node name="AmmoHUD" type="Label" parent="Head/CanvasLayer"]
-offset_left = 11.0
-offset_top = 559.0
-offset_right = 96.0
-offset_bottom = 633.0
-script = ExtResource("5_vmacs")
+[node name="Label" type="Label" parent="Head/CanvasLayer"]
+offset_left = 12.0
+offset_top = 574.0
+offset_right = 115.0
+offset_bottom = 636.0
+script = ExtResource("5_ypn0d")
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Head"]
 stream = ExtResource("3_r448r")
