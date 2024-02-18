@@ -7,13 +7,13 @@ extends CharacterBody3D
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var playerDamage = $World/Player
 var dead = false
+var damage  : int = 1
 
 func _physics_process(delta):
 	if dead:
 		return
 	if player == null:
 		return
-	
 	var dir = player.global_position - global_position
 	dir.y = 0.0
 	dir = dir.normalized()
@@ -31,7 +31,7 @@ func attempt_to_kill_player():
 	var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)
 	if result.is_empty():
-		player.kill()
+		player.takedamage(damage)
 
 # Assuming 'health' is a variable declared elsewhere in your code
 

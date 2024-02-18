@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://4tipgjxfur0l"]
+[gd_scene load_steps=5 format=3 uid="uid://4tipgjxfur0l"]
 
 [ext_resource type="PackedScene" uid="uid://d3thxbld6axya" path="res://player.tscn" id="1_407f6"]
 [ext_resource type="MeshLibrary" uid="uid://idgws16p7pxu" path="res://ASSETS/BLENDER/DemoTiles.tres" id="1_yqcqa"]
 [ext_resource type="Script" path="res://GridMap.gd" id="2_606fl"]
+
+[sub_resource type="Environment" id="Environment_cc26c"]
+background_mode = 1
+background_color = Color(0.643137, 0.643137, 0.643137, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -13,3 +17,10 @@ script = ExtResource("2_606fl")
 
 [node name="Player" parent="." instance=ExtResource("1_407f6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6116, 0, 3.62844)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cc26c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.889799, 0.262568, -0.37325, 5.23676e-08, 0.817899, 0.575362, 0.456352, 0.511957, -0.727766, -17.6064, -431.239, -504.313)
+shadow_enabled = true

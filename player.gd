@@ -9,11 +9,15 @@ extends CharacterBody3D
 @onready var mouse_sensitivity = float(0.3)
 
 const SPEED = 5.0
-
+var health : int = 100
 var can_shoot = true
 var dead = false
-var ammo = 3
+var ammo = 20
 var has_ammo = true
+
+var isCooldownActive : bool = false
+var cooldownTimer : float = 0.0
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -26,12 +30,17 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sensitivity
 		head.rotation_degrees.x -= event.relative.y * mouse_sensitivity
+		
+		
 func _process(delta):
+	if isCooldownActive:
+		cooldownTimer -= delta
+		if cooldownTimer <= 0:
+			isCooldownActive = false
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
 		restart()
-	
 	if dead:
 		return
 	if Input.is_action_just_pressed("shoot"):
@@ -76,6 +85,19 @@ func ammocount():
 	else:
 		ammo = 0
 		has_ammo = false
+		
+func takedamage(damage : int):
+	if not isCooldownActive:
+		health -= damage
+		# Set the cooldown timer to one second
+		var cooldownTimer : float = 0.5
+		isCooldownActive = true
+		# Additional logic or actions can be added here based on the damage taken
+	else:
+		print("Cooldown active. Cannot take damage right now.")
+	if health == 0 :
+		kill()
+
 func kill():
 	dead = true
 	$Head/CanvasLayer/DeathScreen.show()
