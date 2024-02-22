@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://78lrd2bkfojf" path="res://ASSETS/SOUNDS/GRUNT.mp3" id="4_arpg4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x4756"]
-height = 1.73386
+height = 1.84422
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhjkl"]
 atlas = ExtResource("3_tuvsb")
