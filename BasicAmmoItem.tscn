@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://37v52kbw786o"]
+
+[ext_resource type="Script" path="res://BasicAmmoItem.gd" id="1_quhem"]
+[ext_resource type="Texture2D" uid="uid://bdxw08ij5us7i" path="res://ASSETS/SIGHTS/AMMO.png" id="2_i5osj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poodr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i5osj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BasicAmmoItem" type="Node3D"]
+script = ExtResource("1_quhem")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.0005
+sprite_frames = SubResource("SpriteFrames_poodr")
