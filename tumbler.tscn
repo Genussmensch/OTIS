@@ -97,7 +97,7 @@ unit_size = 2.0
 bus = &"Sfx"
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10835, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15512, 0)
 pixel_size = 0.009
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_l0esg")

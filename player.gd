@@ -16,7 +16,7 @@ var ammo = 20
 var has_ammo = true
 
 var isCooldownActive : bool = false
-var cooldownTimer : float = 20
+var cooldownTimer : float = 0.0
 
 
 func _ready():
@@ -34,8 +34,8 @@ func _input(event):
 		
 func _process(delta):
 	if isCooldownActive:
-		cooldownTimer -= 1
-		if cooldownTimer == 0:
+		cooldownTimer -= delta
+		if cooldownTimer <= 0:
 			isCooldownActive = false
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
@@ -90,9 +90,11 @@ func takedamage(damage : int):
 	if not isCooldownActive:
 		health -= damage
 		# Set the cooldown timer to one second
-		cooldownTimer = 20
+		var cooldownTimer : float = 0.5
 		isCooldownActive = true
 		# Additional logic or actions can be added here based on the damage taken
+	else:
+		print("Cooldown active. Cannot take damage right now.")
 	if health == 0 :
 		kill()
 
