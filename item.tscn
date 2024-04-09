@@ -1,5 +1,22 @@
-[gd_scene format=3 uid="uid://dyf8x77ljrf6v"]
+[gd_scene load_steps=4 format=3 uid="uid://dyf8x77ljrf6v"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://item.gd" id="1_urmoo"]
+[ext_resource type="Texture2D" uid="uid://bf4r32gm8hrfd" path="res://ASSETS/SIGHTS/AMMO.png" id="2_pim8a"]
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m26od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pim8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_urmoo")
+
+[node name="Item" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.1
+sprite_frames = SubResource("SpriteFrames_m26od")

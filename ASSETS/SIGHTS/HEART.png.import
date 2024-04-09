@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6e8ttlnlo7uc"
-path.s3tc="res://.godot/imported/itemsprite.png-767a8399657d24104ad4830c8ed65a6c.s3tc.ctex"
+uid="uid://cj8b1f1fs53mw"
+path.s3tc="res://.godot/imported/HEART.png-71d9ed62f49b7efcde0650fef21d3c5d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ASSETS/SIGHTS/itemsprite.png"
-dest_files=["res://.godot/imported/itemsprite.png-767a8399657d24104ad4830c8ed65a6c.s3tc.ctex"]
+source_file="res://ASSETS/SIGHTS/HEART.png"
+dest_files=["res://.godot/imported/HEART.png-71d9ed62f49b7efcde0650fef21d3c5d.s3tc.ctex"]
 
 [params]
 
