@@ -1,22 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://2d2vig3f554e"]
+[gd_scene load_steps=3 format=3 uid="uid://1uf4t62pptk6"]
 
-[ext_resource type="Script" path="res://item.gd" id="1_kaleb"]
-[ext_resource type="Texture2D" uid="uid://cj8b1f1fs53mw" path="res://ASSETS/SIGHTS/HEART.png" id="2_147y0"]
+[ext_resource type="Script" path="res://BasicHealthItem.gd" id="1_o40qi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e680c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_147y0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwl54"]
 
 [node name="BasicHealthItem" type="Node3D"]
-script = ExtResource("1_kaleb")
+script = ExtResource("1_o40qi")
 
-[node name="Item" type="AnimatedSprite3D" parent="."]
-pixel_size = 0.0005
-sprite_frames = SubResource("SpriteFrames_e680c")
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mwl54")
