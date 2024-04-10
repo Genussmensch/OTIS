@@ -4,10 +4,16 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $Head/RayCast3D
 @onready var shoot_sound = $Head/ShootSound
 @onready var click_sound = $Head/ClickSound
-@onready var playerDamage = 50
+
+@onready var criticalChance = 0.1
+@onready var defaultFactor : float = 1
+@onready var temporaryFactor  : float = 2
+@onready var criticalFactor  : float = 5
+@onready var playerDamage  : float
+
 @onready var head = $Head
 @onready var mouse_sensitivity = float(0.3)
-
+@onready var allFactors
 const SPEED = 5.0
 var health : int = 100
 var ammo = 20
@@ -43,7 +49,7 @@ func _process(delta):
 		restart()
 	if dead:
 		return
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		shoot()
 
 func _physics_process(_delta):
@@ -74,8 +80,8 @@ func shoot():
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
-		print(ray_cast_3d.get_collider())
 		if ray_cast_3d.get_collider().is_in_group("Enemy"):
+			playerDamage = getAllDamageFactors()
 			ray_cast_3d.get_collider().takeDamage(playerDamage)
 	ammocount()
 
@@ -94,11 +100,23 @@ func takedamage(damage : int):
 		health -= damage
 		cooldownTimer = 20
 		isCooldownActive = true
-
-	
 	if health == 0 :
 		kill()
-
+		
+func getAllDamageFactors():
+	#prüfe Waffe und Buffs
+	var randomValue = randf()
+	var critical
+	if randomValue < criticalChance:
+		critical = criticalFactor
+		$CRITICAL.play()
+	else:
+		critical = 1
+	
+	allFactors = critical * defaultFactor * temporaryFactor
+	return allFactors
+	
+	
 func kill():
 	dead = true
 	$Head/CanvasLayer/DeathScreen.show()

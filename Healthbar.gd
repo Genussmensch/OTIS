@@ -5,10 +5,10 @@ extends Node
 var health_scale: float = 16
 var health_render_scale: float = 0.0
 var is_dead: bool = false
-var unscaled_health: int = 100  
+@onready var unscaled_health : float = get_parent().tumbler_health
 
 func _ready():
-	health_render_scale = health_scale / float(unscaled_health)
+	health_render_scale = health_scale / unscaled_health
 
 func _process(delta):
 	render_healthbar()

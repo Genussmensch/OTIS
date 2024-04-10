@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
 [ext_resource type="Script" path="res://AmmoHUD.gd" id="5_vmacs"]
 [ext_resource type="AudioStream" uid="uid://df3i4ty7qr23x" path="res://ASSETS/SOUNDS/click.mp3" id="6_lowhq"]
-[ext_resource type="AudioStream" uid="uid://bc30tm833peam" path="res://ASSETS/SOUNDS/HEADSHOT.mp3" id="8_why8x"]
+[ext_resource type="AudioStream" uid="uid://ds1tjkt2xceql" path="res://ASSETS/SOUNDS/BLING.mp3" id="8_uhb7a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
 atlas = ExtResource("1_wsjox")
@@ -166,5 +166,5 @@ mesh = SubResource("CapsuleMesh_msug4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7xmbu")
 
-[node name="HEADSHOT" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_why8x")
+[node name="CRITICAL" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_uhb7a")
