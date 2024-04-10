@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3thxbld6axya"]
+[gd_scene load_steps=17 format=3 uid="uid://d3thxbld6axya"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
 [ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://ASSETS/SIGHTS/gun_sprites.png" id="1_wsjox"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
 [ext_resource type="Script" path="res://AmmoHUD.gd" id="5_vmacs"]
 [ext_resource type="AudioStream" uid="uid://df3i4ty7qr23x" path="res://ASSETS/SOUNDS/click.mp3" id="6_lowhq"]
+[ext_resource type="AudioStream" uid="uid://bc30tm833peam" path="res://ASSETS/SOUNDS/HEADSHOT.mp3" id="8_why8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
 atlas = ExtResource("1_wsjox")
@@ -164,3 +165,6 @@ mesh = SubResource("CapsuleMesh_msug4")
 [node name="Body" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7xmbu")
+
+[node name="HEADSHOT" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_why8x")

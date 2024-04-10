@@ -10,9 +10,9 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 var health : int = 100
-var can_shoot = true
-var dead = false
 var ammo = 20
+var dead = false
+var can_shoot = true
 var has_ammo = true
 
 var isCooldownActive : bool = false
@@ -74,11 +74,14 @@ func shoot():
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
-		ray_cast_3d.get_collider().takeDamage(playerDamage)
+		print(ray_cast_3d.get_collider())
+		if ray_cast_3d.get_collider().is_in_group("Enemy"):
+			ray_cast_3d.get_collider().takeDamage(playerDamage)
 	ammocount()
 
 func shoot_anim_done():
 	can_shoot = true
+	
 func ammocount():
 	if ammo > 1:
 		ammo -= 1

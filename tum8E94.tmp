@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c8bdpo62d8wh2"]
+[gd_scene load_steps=35 format=3 uid="uid://c8bdpo62d8wh2"]
 
 [ext_resource type="Script" path="res://tumbler.gd" id="1_bumub"]
 [ext_resource type="AudioStream" uid="uid://bhdvq6s1kins6" path="res://ASSETS/SOUNDS/BREAK.mp3" id="2_ny0sk"]
@@ -8,10 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvk24oopqyqg2" path="res://ASSETS/SIGHTS/HEALTHBAR.png" id="5_t8lig"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x4756"]
-height = 1.61535
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_15ml3"]
-radius = 0.345941
+height = 1.84422
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhjkl"]
 atlas = ExtResource("3_tuvsb")
@@ -209,16 +206,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="tumbler" type="CharacterBody3D" groups=["Enemy"]]
+[node name="tumbler" type="CharacterBody3D"]
 script = ExtResource("1_bumub")
 
-[node name="Body" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.830945, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03885, 0)
 shape = SubResource("CapsuleShape3D_x4756")
-
-[node name="Head" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67687, 0)
-shape = SubResource("SphereShape3D_15ml3")
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_ny0sk")
@@ -240,7 +233,5 @@ stream = ExtResource("4_arpg4")
 script = ExtResource("5_0cwc5")
 
 [node name="healthbar" type="AnimatedSprite3D" parent="Healthbar"]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 1.5991, 0)
-billboard = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70012, 0)
 sprite_frames = SubResource("SpriteFrames_2kd8l")
-autoplay = "default"

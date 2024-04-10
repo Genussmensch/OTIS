@@ -19,4 +19,6 @@ script = ExtResource("1_o40qi")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.0005
+billboard = 2
 sprite_frames = SubResource("SpriteFrames_mwl54")
+autoplay = "default"

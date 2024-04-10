@@ -19,4 +19,6 @@ script = ExtResource("1_quhem")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 pixel_size = 0.0005
+billboard = 2
 sprite_frames = SubResource("SpriteFrames_poodr")
+autoplay = "default"

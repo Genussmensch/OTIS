@@ -1,13 +1,14 @@
 extends CharacterBody3D
 
-@onready var health = 100
-#@onready var animated_sprite_3d = $Sprite
-@export var move_speed = 4.0
-@export var attack_range = 1.5
+
+@onready var animated_sprite_3d = $Sprite
+@export var move_speed = 2.0
+@export var attack_range = 1.2
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var playerDamage = $World/Player
+@onready var tumbler_health : int = 100
 var dead = false
-var damage  : int = 1
+var damage  : int = 5
 
 func _physics_process(delta):
 	if dead:
@@ -37,11 +38,12 @@ func attempt_to_kill_player():
 
 func takeDamage(playerDamage):
 	# Deduct the player's health
-	health -= playerDamage
+	tumbler_health -= playerDamage
 	$DamageSound.play()
 	# Check if the player is dead
-	if health <= 0:
+	if tumbler_health <= 0:
 		dead = true
 		$DeathSound.play()
 		$Sprite.play("death")
-		$CollisionShape3D.disabled = true
+		$Body.disabled = true
+		$Head.disabled = true
