@@ -57,3 +57,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.80099, 0.725728, -0.586844
 
 [node name="BasicAmmoItem" parent="." instance=ExtResource("7_msjpm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20088, 0.959027, -0.982643)
+pickup_range = 1.0

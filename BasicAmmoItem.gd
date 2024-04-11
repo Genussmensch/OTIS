@@ -25,7 +25,7 @@ func interact():
 #
 
 func collect():
-	print("You collected: ", item_name)
+	$COLLECT.play()
 	player.ammo += 5
 	player.has_ammo = true
 	queue_free() 

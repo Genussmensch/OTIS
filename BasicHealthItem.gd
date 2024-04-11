@@ -25,7 +25,7 @@ func interact():
 #
 
 func collect():
-	print("You collected: ", item_name)
+	$COLLECT.play()
 	player.health += 10
 	queue_free() 
 	
