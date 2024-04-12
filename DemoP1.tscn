@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddxs2myuxrhwf"]
+[gd_scene load_steps=12 format=3 uid="uid://ddxs2myuxrhwf"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_xhlmw"]
 [ext_resource type="AudioStream" uid="uid://b6mqt6l3w7ayf" path="res://ASSETS/SOUNDS/LEVEL 1.mp3" id="2_w2uvk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bgichlsle8vi2" path="res://BasicHealthItem.tscn" id="6_55bcu"]
 [ext_resource type="PackedScene" uid="uid://rm28mjsr21d" path="res://BasicAmmoItem.tscn" id="7_msjpm"]
 [ext_resource type="PackedScene" uid="uid://bx07482ef2f6p" path="res://BasicExpItem.tscn" id="9_k5jfp"]
+[ext_resource type="PackedScene" uid="uid://d2sngdkep2anv" path="res://MINE.tscn" id="10_rh2a3"]
 
 [sub_resource type="Environment" id="Environment_2bx7j"]
 background_mode = 1
@@ -73,3 +74,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4124, 0, 15.459)
 
 [node name="BasicExpItem" parent="Items" instance=ExtResource("9_k5jfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69957, 0, -1.6556)
+
+[node name="Obstacles" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.41965, 0, 7.95927)
+
+[node name="MINE" parent="Obstacles" instance=ExtResource("10_rh2a3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6128, 0.645613, 2.36997)

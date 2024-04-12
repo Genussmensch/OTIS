@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2sngdkep2anv"]
+
+[ext_resource type="Script" path="res://MINE.gd" id="1_awtpp"]
+[ext_resource type="Texture2D" uid="uid://b8pg7bwdovhik" path="res://ASSETS/SIGHTS/MINE.png" id="1_oejot"]
+[ext_resource type="AudioStream" uid="uid://b7idcixqjrlgl" path="res://ASSETS/SOUNDS/BOOM.mp3" id="3_hhomi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kogl"]
+atlas = ExtResource("1_oejot")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0t72"]
+atlas = ExtResource("1_oejot")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gvdb"]
+atlas = ExtResource("1_oejot")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq5kr"]
+atlas = ExtResource("1_oejot")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_got44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kogl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0t72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gvdb")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq5kr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="MINE" type="CharacterBody3D"]
+script = ExtResource("1_awtpp")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_got44")
+animation = &"death"
+autoplay = "idle"
+
+[node name="BOOM" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_hhomi")
+volume_db = 9.143
