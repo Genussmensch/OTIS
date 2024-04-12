@@ -124,3 +124,7 @@ func kill():
 	
 func get_ammo():
 	return ammo
+	
+func collect():
+	$COLLECT.play()
+	

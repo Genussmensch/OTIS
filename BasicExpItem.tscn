@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx07482ef2f6p"]
+
+[ext_resource type="Texture2D" uid="uid://cuqagud1jtulw" path="res://ASSETS/SIGHTS/EXP.png" id="1_1opw6"]
+[ext_resource type="Script" path="res://BasicExpItem.gd" id="1_fxoud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_125n2"]
+atlas = ExtResource("1_1opw6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dstr"]
+atlas = ExtResource("1_1opw6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr8bd"]
+atlas = ExtResource("1_1opw6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq7vo"]
+atlas = ExtResource("1_1opw6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67ju5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_125n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dstr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr8bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq7vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr8bd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dstr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="BasicExpItem" type="Node3D"]
+script = ExtResource("1_fxoud")
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.908448, 0)
+billboard = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_67ju5")
+autoplay = "default"

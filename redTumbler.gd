@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
-var health : float = 8
+var health : float = 16
 @onready var animated_sprite_3d = $Sprite
-@export var move_speed = 2.0
+@export var move_speed = 3.0
 @export var attack_range = 1.2
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var playerDamage = $World/Player
 var dead = false
-var damage  : int = 5
+var damage  : int = 10
 
 func _physics_process(delta):
 	if dead:
@@ -33,21 +33,18 @@ func attempt_to_kill_player():
 	if result.is_empty():
 		player.takedamage(damage)
 
-# Assuming 'health' is a variable declared elsewhere in your code
-
 func takeDamage(playerDamage):
-	# Deduct the player's health
 	health -= playerDamage
 	$DamageSound.play()
-	# Check if the player is dead
 	if health <= 0:
 		dead = true
 		drop_item()
 		$DeathSound.play()
 		$Sprite.play("death")
 		$Body.disabled = true
-	
-	
+		
+		
+		
 	
 func drop_item():
 # Random float between 0 and 1
@@ -69,3 +66,4 @@ func drop_item():
 	item_instance.global_position = self.global_position
 	if get_parent():
 		get_parent().add_child(item_instance)
+

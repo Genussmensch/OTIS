@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rm28mjsr21d"]
+[gd_scene load_steps=4 format=3 uid="uid://rm28mjsr21d"]
 
 [ext_resource type="Script" path="res://BasicAmmoItem.gd" id="1_quhem"]
 [ext_resource type="Texture2D" uid="uid://bdxw08ij5us7i" path="res://ASSETS/SIGHTS/AMMO.png" id="2_i5osj"]
-[ext_resource type="AudioStream" uid="uid://c2tyunb24sg8" path="res://ASSETS/SOUNDS/BLEEP.mp3" id="3_byvpq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_poodr"]
 animations = [{
@@ -19,11 +18,9 @@ animations = [{
 script = ExtResource("1_quhem")
 
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.967338, 0)
 pixel_size = 0.02
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_poodr")
 autoplay = "default"
-
-[node name="COLLECT" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_byvpq")

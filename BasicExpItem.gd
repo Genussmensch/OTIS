@@ -26,6 +26,4 @@ func interact():
 
 func collect():
 	player.collect()
-	player.ammo += 5
-	player.has_ammo = true
 	queue_free() 

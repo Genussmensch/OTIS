@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3thxbld6axya"]
+[gd_scene load_steps=18 format=3 uid="uid://d3thxbld6axya"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
 [ext_resource type="Texture2D" uid="uid://ducwu1mhnqckn" path="res://ASSETS/SIGHTS/gun_sprites.png" id="1_wsjox"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://AmmoHUD.gd" id="5_vmacs"]
 [ext_resource type="AudioStream" uid="uid://df3i4ty7qr23x" path="res://ASSETS/SOUNDS/click.mp3" id="6_lowhq"]
 [ext_resource type="AudioStream" uid="uid://ds1tjkt2xceql" path="res://ASSETS/SOUNDS/BLING.mp3" id="8_uhb7a"]
+[ext_resource type="AudioStream" uid="uid://c2tyunb24sg8" path="res://ASSETS/SOUNDS/BLEEP.mp3" id="9_mvt8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcqdb"]
 atlas = ExtResource("1_wsjox")
@@ -168,3 +169,6 @@ shape = SubResource("CapsuleShape3D_7xmbu")
 
 [node name="CRITICAL" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_uhb7a")
+
+[node name="COLLECT" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_mvt8r")

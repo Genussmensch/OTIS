@@ -58,18 +58,19 @@ data = {
 }
 
 [node name="Items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11297, 0.474843, 7.67657)
 
 [node name="BasicAmmoItem3" parent="Items" instance=ExtResource("7_msjpm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3059, 0, 25.6186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8535, 0, 15.9622)
 
 [node name="BasicAmmoItem2" parent="Items" instance=ExtResource("7_msjpm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.41965, 0, 7.95927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13318, 0, 8.4093)
 
 [node name="BasicAmmoItem" parent="Items" instance=ExtResource("7_msjpm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2398, 0, -14.758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43785, 0, -22.4426)
 
 [node name="BasicHealthItem" parent="Items" instance=ExtResource("6_55bcu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4124, 0, 15.459)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92401, 0, 6.09167)
 
 [node name="BasicExpItem" parent="Items" instance=ExtResource("9_k5jfp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69957, 0, -1.6556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0549, 0, -10.7837)

@@ -23,9 +23,8 @@ func interact():
 	if is_collectible:
 		collect()
 #
-
 func collect():
-	$COLLECT.play()
+	player.collect()
 	player.health += 10
 	queue_free() 
 	
