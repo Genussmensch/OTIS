@@ -6,8 +6,8 @@ extends CharacterBody3D
 @onready var click_sound = $Head/ClickSound
 
 @onready var criticalChance = 0.1
-@onready var defaultFactor : float = 1
-@onready var temporaryFactor  : float = 2
+@onready var defaultFactor : float = 10
+@onready var temporaryFactor  : float = 1
 @onready var criticalFactor  : float = 5
 @onready var playerDamage  : float
 
@@ -24,6 +24,10 @@ var has_ammo = true
 var isCooldownActive : bool = false
 var cooldownTimer : float = 20
 
+var fevercount  : int = 0
+var breakthrough : int = 3000
+var feveractive : bool = false
+
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -39,6 +43,7 @@ func _input(event):
 		
 		
 func _process(delta):
+	feverStatus()
 	if isCooldownActive:
 		cooldownTimer -= 1
 		if cooldownTimer <= 0:
@@ -100,7 +105,7 @@ func takedamage(damage : int):
 		health -= damage
 		cooldownTimer = 20
 		isCooldownActive = true
-	if health == 0 :
+	if health <= 0 :
 		kill()
 		
 func getAllDamageFactors():
@@ -117,6 +122,28 @@ func getAllDamageFactors():
 	return allFactors
 	
 	
+func feverStatus():
+	if fevercount  >= breakthrough:
+		if feveractive == false:
+			fever()
+	else:
+		endFever()
+	if fevercount > 0:
+		fevercount -= 1
+
+func fever():
+	feveractive = true
+	criticalChance = 0.3
+	temporaryFactor = 2
+	criticalFactor  = 10
+
+func endFever():
+	feveractive = false
+	criticalChance = 0.1
+	temporaryFactor = 1
+	criticalFactor  = 5
+
+
 func kill():
 	dead = true
 	$Head/CanvasLayer/DeathScreen.show()

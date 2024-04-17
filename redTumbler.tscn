@@ -181,7 +181,7 @@ pixel_size = 0.032
 billboard = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_mpcym")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Body" type="CollisionShape3D" parent="."]

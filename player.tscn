@@ -145,9 +145,9 @@ text = "Restart"
 
 [node name="AmmoHUD" type="Label" parent="Head/CanvasLayer"]
 offset_left = 11.0
-offset_top = 559.0
+offset_top = 493.0
 offset_right = 96.0
-offset_bottom = 633.0
+offset_bottom = 591.0
 script = ExtResource("5_vmacs")
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Head"]

@@ -41,13 +41,15 @@ func takeDamage(playerDamage):
 	$DamageSound.play()
 	# Check if the player is dead
 	if health <= 0:
-		dead = true
-		drop_item()
-		$DeathSound.play()
-		$Sprite.play("death")
-		$Body.disabled = true
+		die()
 	
-	
+func die():
+	dead = true
+	drop_item()
+	$DeathSound.play()
+	$Sprite.play("death")
+	player.fevercount += 1000
+	$Body.disabled = true
 	
 func drop_item():
 # Random float between 0 and 1
