@@ -132,12 +132,17 @@ func feverStatus():
 		fevercount -= 1
 
 func fever():
+	$FEVER.play()
 	feveractive = true
 	criticalChance = 0.3
 	temporaryFactor = 2
 	criticalFactor  = 10
+	
+func _on_music_finished():
+	$FEVER.play()
 
 func endFever():
+	$FEVER.playing = false
 	feveractive = false
 	criticalChance = 0.1
 	temporaryFactor = 1

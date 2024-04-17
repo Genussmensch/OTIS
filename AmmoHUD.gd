@@ -1,16 +1,17 @@
-extends Label
+extends AnimatedSprite2D
 
+@onready var ammo : float = get_parent().get_parent().get_parent().ammo
+var ammo_max: float = 32
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-func _process(delta):
-	var ammo = get_parent().get_parent().get_parent().ammo
-	var health = get_parent().get_parent().get_parent().health
-	var fevercount = get_parent().get_parent().get_parent().fevercount
-	var feveractive = get_parent().get_parent().get_parent().feveractive
-	text = "Ammo: "+str(ammo)+"
-	Health: "+str(health)+"
-	fevercount: "+str(fevercount)+"
-	Fever? "+str(feveractive)
-	
+	pass # Replace with function body.
 
+func _process(delta):
+	render_ammobar()
+
+func render_ammobar():
+	ammo = get_parent().get_parent().get_parent().ammo 
+	if ammo > ammo_max:
+		ammo = ammo_max
+	set_frame(ammo)
 

@@ -73,7 +73,7 @@ script = ExtResource("1_xhlmw")
 environment = SubResource("Environment_2bx7j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.889799, 0.262568, -0.37325, 5.23676e-08, 0.817899, 0.575362, 0.456352, 0.511957, -0.727766, -17.6064, -431.239, -504.313)
+transform = Transform3D(-0.889799, 0.262568, -0.37325, 5.23676e-08, 0.817899, 0.575362, 0.456352, 0.511957, -0.727766, -5.28452, -43.7299, 400.45)
 shadow_enabled = true
 
 [node name="music" type="AudioStreamPlayer" parent="."]
@@ -81,7 +81,7 @@ stream = ExtResource("2_w2uvk")
 volume_db = -8.764
 
 [node name="player" parent="." instance=ExtResource("3_4bw3l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7554, 0.126854, 22.9706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61185, 0.193463, -11.0437)
 
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138191, 0)
