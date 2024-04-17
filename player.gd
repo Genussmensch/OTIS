@@ -14,7 +14,7 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var mouse_sensitivity = float(0.3)
 @onready var allFactors
-const SPEED = 5.0
+const SPEED = 12.0
 var health : int = 100
 var ammo = 20
 var dead = false

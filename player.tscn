@@ -1197,29 +1197,29 @@ text = "Restart"
 
 [node name="AMMOHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
-position = Vector2(1114, 323)
-scale = Vector2(9.125, 5.03125)
+position = Vector2(1134.75, 323)
+scale = Vector2(3.9375, 5.03125)
 sprite_frames = SubResource("SpriteFrames_xlt87")
 script = ExtResource("7_rvafh")
 
 [node name="HEALTHHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
-position = Vector2(598, 609)
-scale = Vector2(2.70703, 4.9375)
+position = Vector2(581, 607)
+scale = Vector2(4.47607, 5.15625)
 sprite_frames = SubResource("SpriteFrames_laegy")
 script = ExtResource("7_6iqfh")
 
 [node name="FEVERHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
-position = Vector2(597.5, 51)
-scale = Vector2(2.73047, 5.875)
+position = Vector2(576, 41.5)
+scale = Vector2(4.5, 5.0625)
 sprite_frames = SubResource("SpriteFrames_h8jpf")
 autoplay = "default"
 
 [node name="EXPHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
-position = Vector2(20, 326)
-scale = Vector2(5, 5.01563)
+position = Vector2(18, 324.5)
+scale = Vector2(4.5, 5.03906)
 sprite_frames = SubResource("SpriteFrames_6xqyj")
 script = ExtResource("11_pc5up")
 

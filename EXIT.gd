@@ -12,12 +12,14 @@ func _process(delta):
 	
 func attempt_to_exit():
 		dist_to_player = global_position.distance_to(player.global_position)
-		if dist_to_player < 1:
+		if dist_to_player < 2:
 			exit()
 		
 func exit():
-		var res_path = "res://DemoP1.tscn"
-		switch_scene(res_path)
+	print("PlayerIsExiting")
+	SignalBus.emit_signal("_exit")
+	#var res_path = "res://DemoP1.tscn"
+	#switch_scene(res_path)
 		
 
 func switch_scene(res_path):
