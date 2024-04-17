@@ -14,9 +14,10 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var mouse_sensitivity = float(0.3)
 @onready var allFactors
-const SPEED = 12.0
+const SPEED = 4.0
+var speedFactor = 1
 var health : int = 100
-var ammo = 20
+var ammo = 10
 var dead = false
 var can_shoot = true
 var has_ammo = true
@@ -65,11 +66,11 @@ func _physics_process(_delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forwards", "move_backwards")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED * speedFactor
+		velocity.z = direction.z * SPEED * speedFactor
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * speedFactor)
+		velocity.z = move_toward(velocity.z, 0, SPEED * speedFactor)
 	
 	move_and_slide()
 
@@ -139,7 +140,7 @@ func fever():
 	criticalChance = 0.3
 	temporaryFactor = 2
 	criticalFactor  = 10
-	
+	speedFactor = 4
 func _on_music_finished():
 	$FEVER.play()
 
@@ -149,7 +150,7 @@ func endFever():
 	criticalChance = 0.1
 	temporaryFactor = 1
 	criticalFactor  = 5
-
+	speedFactor = 1
 
 func kill():
 	dead = true

@@ -69,7 +69,7 @@ func draw_tiles(gridSize: Vector2i, offset: Vector2i, pattern: TileMap):
 		set_cell_item(position, 1 - baseItem)
 
 func spawn_enemy(position : Vector3i):
-	if randi_range(0, 100) > 60:
+	if randi_range(0, 100) > 10:
 		var tumbler = load("res://tumbler.tscn").instantiate()
 		
 		tumbler.global_position = position
@@ -82,22 +82,22 @@ func spawn_exit(position : Vector3i):
 	doors.push_back(exit)
 	add_child(exit)
 		
-func set_spawn():
-	place_tile(1, 1, 1)
-	place_tile(0, 1, 1)
-	place_tile(-1, 1, 1)
-	place_tile(1, 0, 1)
-	place_tile(0, 0, 1)
-	place_tile(-1, 0, 1)	
-	place_tile(1, -1, 1)
-	place_tile(0, -1, 1)
-	place_tile(-1, -1, 1)
-	place_tile(1, 2, 0)
-	place_tile(0, 2, 0)
-	place_tile(-1, 2, 0)
-	place_tile(1, -2, 0)
-	place_tile(0, -2, 0)
-	place_tile(-1, -2, 0)
-func place_tile(x, z, tile_index):
-	var tile_coordinates = Vector3(x, 0, z)  # Assuming a 2D grid, so Z-coordinate is 0
-	set_cell_item(tile_coordinates, tile_index)
+#func set_spawn():
+	#place_tile(1, 1, 1)
+	#place_tile(0, 1, 1)
+	#place_tile(-1, 1, 1)
+	#place_tile(1, 0, 1)
+	#place_tile(0, 0, 1)
+	#place_tile(-1, 0, 1)	
+	#place_tile(1, -1, 1)
+	#place_tile(0, -1, 1)
+	#place_tile(-1, -1, 1)
+	#place_tile(1, 2, 0)
+	#place_tile(0, 2, 0)
+	#place_tile(-1, 2, 0)
+	#place_tile(1, -2, 0)
+	#place_tile(0, -2, 0)
+	#place_tile(-1, -2, 0)
+#func place_tile(x, z, tile_index):
+	#var tile_coordinates = Vector3(x, 0, z)  # Assuming a 2D grid, so Z-coordinate is 0
+	#set_cell_item(tile_coordinates, tile_index)
