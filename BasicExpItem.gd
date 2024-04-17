@@ -26,4 +26,6 @@ func interact():
 
 func collect():
 	player.collect()
+	player.exp += 2
+	print(player.exp)
 	queue_free() 

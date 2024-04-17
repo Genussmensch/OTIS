@@ -28,6 +28,8 @@ var fevercount  : int = 0
 var breakthrough : int = 3000
 var feveractive : bool = false
 
+var exp : int = 0
+var max_exp : int = 22
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
