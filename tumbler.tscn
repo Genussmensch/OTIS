@@ -180,6 +180,7 @@ shape = SubResource("CapsuleShape3D_x4756")
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_ny0sk")
+volume_db = -19.671
 unit_size = 2.0
 bus = &"Sfx"
 

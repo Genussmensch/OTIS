@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ds1tjkt2xceql" path="res://ASSETS/SOUNDS/BLING.mp3" id="8_uhb7a"]
 [ext_resource type="Texture2D" uid="uid://dhvf0etuov7l2" path="res://ASSETS/SIGHTS/HUDFEVER.png" id="9_5puwp"]
 [ext_resource type="AudioStream" uid="uid://c2tyunb24sg8" path="res://ASSETS/SOUNDS/BLEEP.mp3" id="9_mvt8r"]
+[ext_resource type="Script" path="res://FEVERHUD.gd" id="10_3erp0"]
 [ext_resource type="AudioStream" uid="uid://da1gaur2vv3mn" path="res://ASSETS/SOUNDS/FEVER.mp3" id="10_7xldr"]
 [ext_resource type="Texture2D" uid="uid://caaxdph0qsan4" path="res://ASSETS/SIGHTS/HUDEXP.png" id="10_l2ucc"]
 [ext_resource type="Texture2D" uid="uid://cxi2lf3l5n86o" path="res://ASSETS/SIGHTS/FEVERHUDOVERLAY.png" id="10_wlxc3"]
@@ -31,11 +32,7 @@ region = Rect2(0, 64, 64, 64)
 atlas = ExtResource("3_awl6u")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xcsv1"]
-atlas = ExtResource("3_awl6u")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_21yoy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_50hxq"]
 atlas = ExtResource("3_awl6u")
 region = Rect2(128, 0, 64, 64)
 
@@ -47,7 +44,7 @@ region = Rect2(0, 0, 64, 64)
 atlas = ExtResource("3_awl6u")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_72af0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc5o5"]
 atlas = ExtResource("3_awl6u")
 region = Rect2(128, 0, 64, 64)
 
@@ -70,13 +67,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xcsv1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_21yoy")
+"texture": SubResource("AtlasTexture_50hxq")
 }],
 "loop": false,
-"name": &"knife",
+"name": &"new_animation",
 "speed": 5.0
 }, {
 "frames": [{
@@ -95,17 +89,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_72af0")
+"texture": SubResource("AtlasTexture_dc5o5")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qeoq4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_72af0")
+"texture": SubResource("AtlasTexture_dc5o5")
 }],
 "loop": false,
 "name": &"stab",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hw7y"]
@@ -987,7 +981,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"feveractive",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1836,7 +1830,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orh4o"]
@@ -2090,7 +2084,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"levelup",
-"speed": 16.0
+"speed": 20.0
 }]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clmct"]
@@ -2141,7 +2135,7 @@ texture_filter = 1
 position = Vector2(86, -183)
 scale = Vector2(4.89063, 5.125)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
-animation = &"knife"
+animation = &"stab"
 autoplay = "idle"
 
 [node name="Crosshair" type="Sprite2D" parent="Head/CanvasLayer"]
@@ -2206,16 +2200,15 @@ texture_filter = 1
 position = Vector2(576, 41.5)
 scale = Vector2(4.5, 5.0625)
 sprite_frames = SubResource("SpriteFrames_h8jpf")
-animation = &"idle"
+animation = &"feveractive"
 autoplay = "idle"
+script = ExtResource("10_3erp0")
 
 [node name="FEVERHUD2" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
 position = Vector2(576, 41.5)
 scale = Vector2(4.5, 5.0625)
 sprite_frames = SubResource("SpriteFrames_t4q4d")
-frame = 39
-frame_progress = 0.124649
 script = ExtResource("11_anf3v")
 
 [node name="EXPHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
@@ -2230,7 +2223,7 @@ texture_filter = 1
 position = Vector2(591, 519)
 scale = Vector2(4.5, 5.03906)
 sprite_frames = SubResource("SpriteFrames_xe6hj")
-animation = &"idle"
+animation = &"levelup"
 autoplay = "idle"
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="Head"]
@@ -2255,10 +2248,10 @@ stream = ExtResource("8_uhb7a")
 
 [node name="COLLECT" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("9_mvt8r")
+volume_db = -25.946
 
 [node name="FEVER" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_7xldr")
-volume_db = 10.667
 max_db = 0.0
 pitch_scale = 1.95
 autoplay = true

@@ -19,7 +19,7 @@ func get_gridmaps() -> Array:
 func redraw():
 	var grids = get_gridmaps()
 	
-	var gridSize = Vector2i(21,21)
+	var gridSize = Vector2i(12,12)
 	
 	for x in range(-3, 3):
 		for y in range(-3, 3):
@@ -70,13 +70,12 @@ func draw_tiles(gridSize: Vector2i, offset: Vector2i, pattern: TileMap):
 
 func spawn_enemy(position : Vector3i):
 	var enemy
-	if randi_range(0, 100) > 10:
-		enemy = load("res://tumbler.tscn").instantiate()
-		if randi_range(0, 100) > 50:
-			enemy = load("res://redTumbler.tscn").instantiate()
-		enemy.global_position = position
-		enemies.push_back(enemy)
-		add_child(enemy)
+	enemy = load("res://tumbler.tscn").instantiate()
+	if randi_range(0, 100) > 90:
+		enemy = load("res://redTumbler.tscn").instantiate()
+	enemy.global_position = position
+	enemies.push_back(enemy)
+	add_child(enemy)
 
 func spawn_exit(position : Vector3i):
 	var exit = load("res://EXIT.tscn").instantiate()

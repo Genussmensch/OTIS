@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c8bdpo62d8wh2" path="res://tumbler.tscn" id="4_a5drm"]
 [ext_resource type="MeshLibrary" uid="uid://idgws16p7pxu" path="res://ASSETS/BLENDER/DemoTiles.tres" id="5_lyj8r"]
 [ext_resource type="PackedScene" uid="uid://2gr3p0kxwqqc" path="res://redTumbler.tscn" id="5_t8p8c"]
-[ext_resource type="PackedScene" path="res://BasicHealthItem.tscn" id="6_55bcu"]
-[ext_resource type="PackedScene" path="res://EXIT.tscn" id="7_087hj"]
-[ext_resource type="PackedScene" path="res://BasicAmmoItem.tscn" id="7_msjpm"]
+[ext_resource type="PackedScene" uid="uid://bgichlsle8vi2" path="res://BasicHealthItem.tscn" id="6_55bcu"]
+[ext_resource type="PackedScene" uid="uid://ivf38ffvcfrj" path="res://EXIT.tscn" id="7_087hj"]
+[ext_resource type="PackedScene" uid="uid://rm28mjsr21d" path="res://BasicAmmoItem.tscn" id="7_msjpm"]
 [ext_resource type="PackedScene" uid="uid://e4rp25my7iw5" path="res://MINE.tscn" id="10_rh2a3"]
 [ext_resource type="Texture2D" uid="uid://caxerb5adlaor" path="res://ASSETS/SIGHTS/BasicHealthItem.png" id="11_bsjit"]
 

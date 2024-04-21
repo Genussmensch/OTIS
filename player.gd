@@ -15,7 +15,7 @@ extends CharacterBody3D
 @onready var mouse_sensitivity = float(0.3)
 @onready var allFactors
 
-var SPEED = 4.0
+var SPEED = 7.0
 var speedFactor = 1
 
 var level : int = 0
@@ -29,9 +29,14 @@ var knife_range :float = 1.2
 var isCooldownActive : bool = false
 var cooldownTimer : float = 20
 
-var fevercount  : int = 0
+var fevercount  : int = 1
 var breakthrough : int = 3000
 var feveractive : bool = false
+# Constants for fever effects
+var defaultCriticalChance = 0.1
+var defaultTemporaryFactor = 1
+var defaultCriticalFactor = 5
+var defaultSpeedFactor = 1
 
 var exp : int = 0
 var max_exp : int = 22
@@ -62,7 +67,9 @@ func _process(delta):
 	if dead:
 		return
 	if Input.is_action_pressed("shoot"):
-		attack()
+		shoot()
+	if Input.is_action_pressed("stab"):
+		stab()
 
 func _physics_process(_delta):
 	if dead:
@@ -84,19 +91,7 @@ func restart():
 	
 	
 
-	
-func attack():
-	if !can_shoot:
-		return
-	if !has_ammo:
-		if knife_active == false:
-			click_sound.play()
-			setup_knife()
-		elif knife_active == true:
-			stab()
-	else:
-		shoot()
-	
+
 	
 	
 func setup_knife():
@@ -110,9 +105,14 @@ func stab():
 			if ray_cast_3d.get_collider().is_in_group("Enemy"):
 				playerDamage = getAllDamageFactors()
 				ray_cast_3d.get_collider().takeDamage(playerDamage)
-	
-	
+			
 func shoot():
+	if !can_shoot:
+		return
+	if !has_ammo:
+		if knife_active == false:
+			click_sound.play()
+			return
 	can_shoot = false
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
@@ -147,7 +147,7 @@ func getAllDamageFactors():
 	var critical
 	if randomValue < criticalChance:
 		critical = criticalFactor
-		$CRITICAL.play()
+		$CRITICAL.play() 
 	else:
 		critical = 1
 	
@@ -156,31 +156,38 @@ func getAllDamageFactors():
 	
 	
 func feverStatus():
-	if fevercount  >= breakthrough:
-		if feveractive == false:
-			fever()
+	# Check if fever should be activated
+	if fevercount >= breakthrough and not feveractive:
+		fever()
 	else:
 		endFever()
+	
+	# Decrease fever count
 	if fevercount > 0:
 		fevercount -= 1
 
 func fever():
+	# Activate fever effects
 	$FEVER.play()
 	feveractive = true
 	criticalChance = 0.3
 	temporaryFactor = 2
-	criticalFactor  = 10
-	speedFactor += 4
-func _on_music_finished():
-	$FEVER.play()
+	criticalFactor = 10
+	speedFactor += 1.5
 
 func endFever():
-	$FEVER.playing = false
+	# Deactivate fever effects
+	
+	$FEVER.stop()  # Stop the fever sound
 	feveractive = false
-	criticalChance = 0.1
-	temporaryFactor = 1
-	criticalFactor  = 5
-	speedFactor = 1
+	criticalChance = defaultCriticalChance
+	temporaryFactor = defaultTemporaryFactor
+	criticalFactor = defaultCriticalFactor
+	speedFactor = defaultSpeedFactor
+
+func _on_music_finished():
+	# Replay fever sound when associated music finishes
+	$FEVER.play()
 
 func kill():
 	dead = true

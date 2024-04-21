@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var health : float = 16
+var health : float = 6
 @onready var animated_sprite_3d = $Sprite
 @export var move_speed = 3.0
 @export var attack_range = 1.2

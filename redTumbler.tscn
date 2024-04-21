@@ -190,9 +190,11 @@ shape = SubResource("CapsuleShape3D_dc0kj")
 
 [node name="DamageSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_q5v5w")
+volume_db = -8.649
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_gjwjv")
+volume_db = -19.664
 
 [node name="Healthbar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.209085, 0)

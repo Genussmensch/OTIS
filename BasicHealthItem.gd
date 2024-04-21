@@ -25,7 +25,7 @@ func interact():
 #
 func collect():
 	player.collect()
-	player.health += 10
+	player.health += 30
 	queue_free() 
 	
 	

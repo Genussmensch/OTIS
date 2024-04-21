@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var health : float = 8
+var health : float = 3
 @onready var animated_sprite_3d = $Sprite
 @export var move_speed = 2.0
 @export var attack_range = 1.2
@@ -8,6 +8,9 @@ var health : float = 8
 @onready var playerDamage = $World/Player
 var dead = false
 var damage  : int = 5
+
+
+
 func _physics_process(delta):
 	var dist_to_player = global_position.distance_to(player.global_position)
 	if dist_to_player < 15:
@@ -57,9 +60,9 @@ func drop_item():
 	var scene_path
 	if random_value < 0.4:  
 		scene_path = load("res://BasicExpItem.tscn")
-	elif random_value < 0.55:  
+	elif random_value < 0.8:  
 		scene_path = load("res://BasicAmmoItem.tscn")
-	elif random_value < 0.6:  
+	elif random_value < 1:  
 		scene_path = load("res://BasicHealthItem.tscn")
 	else:
 		return 
