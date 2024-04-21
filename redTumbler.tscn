@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bfs6ph4kv8bci"]
+[gd_scene load_steps=30 format=3 uid="uid://2gr3p0kxwqqc"]
 
 [ext_resource type="Script" path="res://redTumbler.gd" id="1_fvfl4"]
 [ext_resource type="AudioStream" uid="uid://bhdvq6s1kins6" path="res://ASSETS/SOUNDS/BREAK.mp3" id="2_gjwjv"]

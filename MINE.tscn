@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2sngdkep2anv"]
+[gd_scene load_steps=9 format=3 uid="uid://e4rp25my7iw5"]
 
 [ext_resource type="Script" path="res://MINE.gd" id="1_awtpp"]
 [ext_resource type="Texture2D" uid="uid://b8pg7bwdovhik" path="res://ASSETS/SIGHTS/MINE.png" id="1_oejot"]

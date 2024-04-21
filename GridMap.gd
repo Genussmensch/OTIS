@@ -69,12 +69,14 @@ func draw_tiles(gridSize: Vector2i, offset: Vector2i, pattern: TileMap):
 		set_cell_item(position, 1 - baseItem)
 
 func spawn_enemy(position : Vector3i):
+	var enemy
 	if randi_range(0, 100) > 10:
-		var tumbler = load("res://tumbler.tscn").instantiate()
-		
-		tumbler.global_position = position
-		enemies.push_back(tumbler)
-		add_child(tumbler)
+		enemy = load("res://tumbler.tscn").instantiate()
+		if randi_range(0, 100) > 50:
+			enemy = load("res://redTumbler.tscn").instantiate()
+		enemy.global_position = position
+		enemies.push_back(enemy)
+		add_child(enemy)
 
 func spawn_exit(position : Vector3i):
 	var exit = load("res://EXIT.tscn").instantiate()

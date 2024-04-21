@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var click_sound = $Head/ClickSound
 
 @onready var criticalChance = 0.1
-@onready var defaultFactor : float = 10
+@onready var defaultFactor : float = 1
 @onready var temporaryFactor  : float = 1
 @onready var criticalFactor  : float = 5
 @onready var playerDamage  : float
@@ -14,14 +14,18 @@ extends CharacterBody3D
 @onready var head = $Head
 @onready var mouse_sensitivity = float(0.3)
 @onready var allFactors
-const SPEED = 4.0
+
+var SPEED = 4.0
 var speedFactor = 1
+
+var level : int = 0
 var health : int = 100
 var ammo = 10
 var dead = false
 var can_shoot = true
 var has_ammo = true
-
+var knife_active :bool = false
+var knife_range :float = 1.2
 var isCooldownActive : bool = false
 var cooldownTimer : float = 20
 
@@ -58,7 +62,7 @@ func _process(delta):
 	if dead:
 		return
 	if Input.is_action_pressed("shoot"):
-		shoot()
+		attack()
 
 func _physics_process(_delta):
 	if dead:
@@ -77,13 +81,38 @@ func _physics_process(_delta):
 
 func restart():
 	get_tree().reload_current_scene()
+	
+	
 
-func shoot():
+	
+func attack():
 	if !can_shoot:
 		return
 	if !has_ammo:
-		click_sound.play()
-		return
+		if knife_active == false:
+			click_sound.play()
+			setup_knife()
+		elif knife_active == true:
+			stab()
+	else:
+		shoot()
+	
+	
+	
+func setup_knife():
+	knife_active = true
+	animated_sprite_2d.play("knife")
+		
+func stab():
+	animated_sprite_2d.play("stab")
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("takeDamage"):
+		if global_position.distance_to(ray_cast_3d.get_collider().global_position) <= knife_range:
+			if ray_cast_3d.get_collider().is_in_group("Enemy"):
+				playerDamage = getAllDamageFactors()
+				ray_cast_3d.get_collider().takeDamage(playerDamage)
+	
+	
+func shoot():
 	can_shoot = false
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
@@ -102,6 +131,7 @@ func ammocount():
 	else:
 		ammo = 0
 		has_ammo = false
+		
 		
 func takedamage(damage : int):
 	if not isCooldownActive:
@@ -140,7 +170,7 @@ func fever():
 	criticalChance = 0.3
 	temporaryFactor = 2
 	criticalFactor  = 10
-	speedFactor = 4
+	speedFactor += 4
 func _on_music_finished():
 	$FEVER.play()
 
@@ -162,4 +192,12 @@ func get_ammo():
 	
 func collect():
 	$COLLECT.play()
+	
+func level_up():
+	$Head/CanvasLayer/LEVELUP.play("levelup")
+	$LEVELUP.play()
+	level = level + 1
+	SPEED += 0.2
+	
+	
 	

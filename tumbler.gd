@@ -8,19 +8,19 @@ var health : float = 8
 @onready var playerDamage = $World/Player
 var dead = false
 var damage  : int = 5
-
 func _physics_process(delta):
-	if dead:
-		return
-	if player == null:
-		return
-	var dir = player.global_position - global_position
-	dir.y = 0.0
-	dir = dir.normalized()
-	
-	velocity = dir * move_speed
-	move_and_slide()
-	attempt_to_kill_player()
+	var dist_to_player = global_position.distance_to(player.global_position)
+	if dist_to_player < 15:
+		if dead:
+			return
+		if player == null:
+			return
+		var dir = player.global_position - global_position
+		dir.y = 0.0
+		dir = dir.normalized()
+		velocity = dir * move_speed
+		move_and_slide()
+		attempt_to_kill_player()
 
 func attempt_to_kill_player():
 	var dist_to_player = global_position.distance_to(player.global_position)
@@ -55,17 +55,14 @@ func drop_item():
 # Random float between 0 and 1
 	var random_value = randf()
 	var scene_path
-	# Check specific ranges of random_value to determine item drop
-	if random_value < 0.3:  # 30% chance
+	if random_value < 0.4:  
 		scene_path = load("res://BasicExpItem.tscn")
-	elif random_value < 0.5:  # 20% chance (total 60% for BasicAmmoItem)
+	elif random_value < 0.55:  
 		scene_path = load("res://BasicAmmoItem.tscn")
-	elif random_value < 0.6:  # 10% chance (total 80% for BasicHealthItem)
+	elif random_value < 0.6:  
 		scene_path = load("res://BasicHealthItem.tscn")
 	else:
-		# If random_value is >= 0.8, nothing drops (20% chance)
-		return  # Exit the function without dropping any item
-	
+		return 
 	# Load and instantiate the chosen scene
 	var item_instance = scene_path.instantiate()
 	item_instance.global_position = self.global_position

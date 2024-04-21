@@ -26,6 +26,8 @@ func interact():
 
 func collect():
 	player.collect()
-	player.exp += 2
-	print(player.exp)
+	player.exp += 22
+	if player.exp >= player.max_exp:
+		player.exp -= player.max_exp
+		player.level_up()
 	queue_free() 
