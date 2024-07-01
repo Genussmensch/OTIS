@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmiticskmadrs"]
+
+[ext_resource type="Script" path="res://SignalBus.gd" id="1_0ux35"]
+[ext_resource type="AudioStream" uid="uid://b6mqt6l3w7ayf" path="res://ASSETS/SOUNDS/LEVEL 1.mp3" id="2_8giec"]
+[ext_resource type="Script" path="res://music.gd" id="3_yruec"]
+[ext_resource type="Script" path="res://as.gd" id="4_pgg51"]
+[ext_resource type="MeshLibrary" uid="uid://c7npmhafcul3b" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_wi6qm"]
+[ext_resource type="PackedScene" uid="uid://d3thxbld6axya" path="res://player.tscn" id="6_0tft8"]
+
+[sub_resource type="Environment" id="Environment_cc26c"]
+background_mode = 1
+background_color = Color(0.643137, 0.643137, 0.643137, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0ux35")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8giec")
+volume_db = -8.764
+script = ExtResource("3_yruec")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("4_wi6qm")
+cell_center_y = false
+script = ExtResource("4_pgg51")
+
+[node name="Player" parent="." instance=ExtResource("6_0tft8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88194, 0.419761, -9.69331)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cc26c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.889799, 0.262568, -0.37325, 5.23676e-08, 0.817899, 0.575362, 0.456352, 0.511957, -0.727766, -17.6064, -431.239, -504.313)
+shadow_enabled = true
