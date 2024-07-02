@@ -44,7 +44,7 @@ var max_exp : int = 22
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done)
-	$Head/CanvasLayer/DeathScreen/Panel/Button.button_up.connect(restart)
+	$Head/CanvasLayer/DeathScreen/Button.button_up.connect(restart)
 
 func _input(event):
 	if dead:
@@ -192,6 +192,7 @@ func _on_music_finished():
 func kill():
 	dead = true
 	$Head/CanvasLayer/DeathScreen.show()
+	$Head/CanvasLayer/DeathScreen/Haeger.play()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func get_ammo():

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://d3thxbld6axya" path="res://player.tscn" id="1_407f6"]
 [ext_resource type="Script" path="res://SignalBus.gd" id="1_efduk"]
-[ext_resource type="MeshLibrary" uid="uid://idgws16p7pxu" path="res://ASSETS/BLENDER/DemoTiles.tres" id="1_yqcqa"]
 [ext_resource type="Script" path="res://GridMap.gd" id="2_606fl"]
 [ext_resource type="Script" path="res://music.gd" id="3_uv7xh"]
+[ext_resource type="MeshLibrary" uid="uid://56dgp6odroqn" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_nu7xd"]
 [ext_resource type="AudioStream" uid="uid://b6mqt6l3w7ayf" path="res://ASSETS/SOUNDS/LEVEL 1.mp3" id="5_l574d"]
 
 [sub_resource type="Environment" id="Environment_cc26c"]
@@ -20,12 +20,12 @@ volume_db = -8.764
 script = ExtResource("3_uv7xh")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_yqcqa")
+mesh_library = ExtResource("4_nu7xd")
 cell_center_y = false
 script = ExtResource("2_606fl")
 
 [node name="Player" parent="." instance=ExtResource("1_407f6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cc26c")

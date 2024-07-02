@@ -1,10 +1,11 @@
-[gd_scene load_steps=315 format=3 uid="uid://d3thxbld6axya"]
+[gd_scene load_steps=323 format=3 uid="uid://d3thxbld6axya"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ltc0k"]
 [ext_resource type="Texture2D" uid="uid://471eqetbkk04" path="res://ASSETS/SIGHTS/crosshair.png" id="2_4hthw"]
 [ext_resource type="Script" path="res://Head.gd" id="2_8emgk"]
 [ext_resource type="Texture2D" uid="uid://e524ekg1lyow" path="res://ASSETS/SIGHTS/WEAPON.png" id="3_awl6u"]
 [ext_resource type="AudioStream" uid="uid://vuvlv83e76sq" path="res://ASSETS/SOUNDS/PEW.wav" id="3_r448r"]
+[ext_resource type="Texture2D" uid="uid://d3567gcwf4wqj" path="res://ASSETS/SIGHTS/Haeger.png" id="5_it750"]
 [ext_resource type="AudioStream" uid="uid://df3i4ty7qr23x" path="res://ASSETS/SOUNDS/click.mp3" id="6_lowhq"]
 [ext_resource type="Texture2D" uid="uid://dwtklqe6sgw16" path="res://ASSETS/SIGHTS/HUDAMMO.png" id="6_oll3c"]
 [ext_resource type="Script" path="res://HEALTHHUD.gd" id="7_6iqfh"]
@@ -100,6 +101,56 @@ animations = [{
 "loop": false,
 "name": &"stab",
 "speed": 20.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrq8g"]
+atlas = ExtResource("5_it750")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx703"]
+atlas = ExtResource("5_it750")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2uai"]
+atlas = ExtResource("5_it750")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs2pp"]
+atlas = ExtResource("5_it750")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bd6l"]
+atlas = ExtResource("5_it750")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxb3s"]
+atlas = ExtResource("5_it750")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_up0xl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrq8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx703")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2uai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs2pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bd6l")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_yxb3s")
+}],
+"loop": false,
+"name": &"Haeger",
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hw7y"]
@@ -2152,34 +2203,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Head/CanvasLayer/DeathScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -35.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Haeger" type="AnimatedSprite2D" parent="Head/CanvasLayer/DeathScreen"]
+position = Vector2(571, 396)
+scale = Vector2(5.21875, 4.38542)
+sprite_frames = SubResource("SpriteFrames_up0xl")
+animation = &"Haeger"
 
-[node name="Button" type="Button" parent="Head/CanvasLayer/DeathScreen/Panel"]
+[node name="Button" type="Button" parent="Head/CanvasLayer/DeathScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -2.0
-offset_right = 32.5
-offset_bottom = 29.0
+offset_left = -77.0
+offset_top = -156.0
+offset_right = 31.0
+offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Restart"
+scale = Vector2(1.44728, 2.09976)
+text = "noch einmal!"
 
 [node name="AMMOHUD" type="AnimatedSprite2D" parent="Head/CanvasLayer"]
 texture_filter = 1
@@ -2240,7 +2284,8 @@ material_override = SubResource("StandardMaterial3D_clmct")
 mesh = SubResource("CapsuleMesh_msug4")
 
 [node name="Body" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+process_mode = 3
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7xmbu")
 
 [node name="CRITICAL" type="AudioStreamPlayer3D" parent="."]
