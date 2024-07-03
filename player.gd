@@ -90,10 +90,6 @@ func restart():
 	get_tree().reload_current_scene()
 	
 	
-
-
-	
-	
 func setup_knife():
 	knife_active = true
 	animated_sprite_2d.play("knife")
@@ -157,17 +153,18 @@ func getAllDamageFactors():
 	
 func feverStatus():
 	# Check if fever should be activated
-	if fevercount >= breakthrough and not feveractive:
-		fever()
+	if fevercount >= breakthrough:
+		if not feveractive:
+			#fever()
+			return
 	else:
-		endFever()
-	
-	# Decrease fever count
-	if fevercount > 0:
-		fevercount -= 1
+		if feveractive:
+			endFever()
+
 
 func fever():
 	# Activate fever effects
+
 	$FEVER.play()
 	feveractive = true
 	criticalChance = 0.3
@@ -187,6 +184,7 @@ func endFever():
 
 func _on_music_finished():
 	# Replay fever sound when associated music finishes
+	print('f2')
 	$FEVER.play()
 
 func kill():

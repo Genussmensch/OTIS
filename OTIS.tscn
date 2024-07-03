@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3p0qvx5hl5wo"]
+
+[ext_resource type="Texture2D" uid="uid://ct22mxu23hy0g" path="res://ASSETS/SIGHTS/MenuBackground.png" id="1_6l33u"]
+[ext_resource type="Script" path="res://OTIS.gd" id="1_f0ryc"]
+
+[sub_resource type="SystemFont" id="SystemFont_jp1o1"]
+
+[sub_resource type="FontVariation" id="FontVariation_otu65"]
+base_font = SubResource("SystemFont_jp1o1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3x3k5"]
+font = SubResource("FontVariation_otu65")
+font_size = 60
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbmn8"]
+atlas = ExtResource("1_6l33u")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfbvc"]
+atlas = ExtResource("1_6l33u")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqf08"]
+atlas = ExtResource("1_6l33u")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv0ri"]
+atlas = ExtResource("1_6l33u")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26dr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbmn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfbvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqf08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv0ri")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 160)
+script = ExtResource("1_f0ryc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -16.0
+offset_right = 4.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Ende" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ende
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 88.0
+offset_right = 736.0
+offset_bottom = 264.0
+text = "OTIS
+"
+label_settings = SubResource("LabelSettings_3x3k5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 5
+position = Vector2(664, 424)
+scale = Vector2(4.59699, 2.91995)
+sprite_frames = SubResource("SpriteFrames_26dr6")
+autoplay = "default"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ende" to="." method="_on_ende_pressed"]

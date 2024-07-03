@@ -2,12 +2,13 @@ extends CharacterBody3D
 
 var health : float = 6
 @onready var animated_sprite_3d = $Sprite
-@export var move_speed = 3.0
+@export var move_speed = 5.0
 @export var attack_range = 1.2
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var playerDamage = $World/Player
 var dead = false
 var damage  : int = 10
+var attackMode = false
 
 func _physics_process(delta):
 	var dist_to_player = global_position.distance_to(player.global_position)
@@ -21,14 +22,18 @@ func _physics_process(delta):
 		dir = dir.normalized()
 	
 		velocity = dir * move_speed
-		move_and_slide()
 		attempt_to_kill_player()
+		if attackMode == false:
+			move_and_slide()
 
 func attempt_to_kill_player():
 	var dist_to_player = global_position.distance_to(player.global_position)
 	if dist_to_player > attack_range:
+		if attackMode == true:
+			attackMode = false
 		return
-	
+	else:
+		attackMode = true
 	var eye_line = Vector3.UP * 1.5
 	var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line, 1)
 	var result = get_world_3d().direct_space_state.intersect_ray(query)

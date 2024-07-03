@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://2gr3p0kxwqqc"]
+[gd_scene load_steps=30 format=3 uid="uid://2ya8c07b2uno"]
 
 [ext_resource type="Script" path="res://redTumbler.gd" id="1_fvfl4"]
 [ext_resource type="AudioStream" uid="uid://bhdvq6s1kins6" path="res://ASSETS/SOUNDS/BREAK.mp3" id="2_gjwjv"]
@@ -178,7 +178,7 @@ script = ExtResource("1_fvfl4")
 [node name="Sprite" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00907, 0)
 pixel_size = 0.032
-billboard = 1
+billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_mpcym")
 animation = &"idle"

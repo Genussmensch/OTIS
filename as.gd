@@ -61,9 +61,9 @@ func draw_tiles(gridSize: Vector2i, offset: Vector2i, pattern: TileMap):
 		var baseItem = atlas.x + 4 * atlas.y
 		var position = Vector3i(offset.x, 0, offset.y) + Vector3i(baseCell.x, 0, baseCell.y)
 		if atlas == Vector2i(0, 1):
-			spawn_enemy(position * Vector3i(2, 0, 2))
+			spawn_enemy(position * Vector3i(1, 0, 1))
 		if atlas == Vector2i(2 , 0):
-			spawn_exit(position * Vector3i(2, 0, 2))
+			spawn_exit(position * Vector3i(1, 0, 1))
 		if baseItem > 1:
 			baseItem = 0
 		set_cell_item(position, tileSelection - baseItem)
@@ -73,8 +73,6 @@ func spawn_enemy(position : Vector3i):
 	enemy = load("res://tumbler.tscn").instantiate()
 	if randi_range(0, 100) > 90:
 		enemy = load("res://redTumbler.tscn").instantiate()
-		
-		
 	enemy.global_position = position
 	enemies.push_back(enemy)
 	add_child(enemy)

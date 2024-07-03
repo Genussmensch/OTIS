@@ -2279,13 +2279,13 @@ bus = &"Sfx"
 stream = ExtResource("6_lowhq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("StandardMaterial3D_clmct")
 mesh = SubResource("CapsuleMesh_msug4")
 
 [node name="Body" type="CollisionShape3D" parent="."]
 process_mode = 3
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_7xmbu")
 
 [node name="CRITICAL" type="AudioStreamPlayer3D" parent="."]
@@ -2297,9 +2297,9 @@ volume_db = -25.946
 
 [node name="FEVER" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("10_7xldr")
+volume_db = -28.829
 max_db = 0.0
 pitch_scale = 1.95
-autoplay = true
 script = SubResource("GDScript_cqnqs")
 
 [node name="LEVELUP" type="AudioStreamPlayer3D" parent="."]

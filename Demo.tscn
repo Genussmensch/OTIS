@@ -1,18 +1,29 @@
 [gd_scene load_steps=8 format=3 uid="uid://4tipgjxfur0l"]
 
 [ext_resource type="PackedScene" uid="uid://d3thxbld6axya" path="res://player.tscn" id="1_407f6"]
-[ext_resource type="Script" path="res://SignalBus.gd" id="1_efduk"]
 [ext_resource type="Script" path="res://GridMap.gd" id="2_606fl"]
 [ext_resource type="Script" path="res://music.gd" id="3_uv7xh"]
-[ext_resource type="MeshLibrary" uid="uid://56dgp6odroqn" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_nu7xd"]
+[ext_resource type="MeshLibrary" uid="uid://xuoiwsmtpo77" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_nu7xd"]
 [ext_resource type="AudioStream" uid="uid://b6mqt6l3w7ayf" path="res://ASSETS/SOUNDS/LEVEL 1.mp3" id="5_l574d"]
+
+[sub_resource type="GDScript" id="GDScript_sqkml"]
+script/source = "extends Node
+
+# Called when the node enters the scene tree for the first time.
+signal _exit()
+
+
+func on_exit():
+	
+	get_tree().change_scene_to_file(\"res://Presentation Level2.tscn\")
+"
 
 [sub_resource type="Environment" id="Environment_cc26c"]
 background_mode = 1
 background_color = Color(0.643137, 0.643137, 0.643137, 1)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_efduk")
+script = SubResource("GDScript_sqkml")
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_l574d")

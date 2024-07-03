@@ -1,18 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://boso0hoflc6yp"]
+[gd_scene load_steps=8 format=3 uid="uid://5fx8usr3k05o"]
 
-[ext_resource type="Script" path="res://SignalBus.gd" id="1_0ux35"]
 [ext_resource type="AudioStream" uid="uid://b6mqt6l3w7ayf" path="res://ASSETS/SOUNDS/LEVEL 1.mp3" id="2_8giec"]
 [ext_resource type="Script" path="res://music.gd" id="3_yruec"]
 [ext_resource type="Script" path="res://as.gd" id="4_pgg51"]
-[ext_resource type="MeshLibrary" uid="uid://56dgp6odroqn" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_wi6qm"]
+[ext_resource type="MeshLibrary" uid="uid://xuoiwsmtpo77" path="res://ASSETS/BLENDER/LevelTiles.tres" id="4_wi6qm"]
 [ext_resource type="PackedScene" uid="uid://d3thxbld6axya" path="res://player.tscn" id="6_0tft8"]
+
+[sub_resource type="GDScript" id="GDScript_sqkml"]
+script/source = "extends Node
+
+# Called when the node enters the scene tree for the first time.
+signal _exit()
+
+
+func on_exit():
+	
+	get_tree().change_scene_to_file(\"res://Presentation Level2.tscn\")
+"
 
 [sub_resource type="Environment" id="Environment_cc26c"]
 background_mode = 1
 background_color = Color(0.643137, 0.643137, 0.643137, 1)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_0ux35")
+script = SubResource("GDScript_sqkml")
+
+[node name="Player" parent="." instance=ExtResource("6_0tft8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.1, 3)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_8giec")
@@ -23,9 +37,6 @@ script = ExtResource("3_yruec")
 mesh_library = ExtResource("4_wi6qm")
 cell_center_y = false
 script = ExtResource("4_pgg51")
-
-[node name="Player" parent="." instance=ExtResource("6_0tft8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.1, 4)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cc26c")
