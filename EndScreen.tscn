@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3p0qvx5hl5wo"]
+[gd_scene load_steps=11 format=3 uid="uid://cbd50rxn0maql"]
 
-[ext_resource type="Texture2D" uid="uid://ct22mxu23hy0g" path="res://ASSETS/SIGHTS/MenuBackground.png" id="1_6l33u"]
-[ext_resource type="Script" path="res://OTIS.gd" id="1_f0ryc"]
+[ext_resource type="Script" path="res://OTIS.gd" id="1_junr8"]
+[ext_resource type="Texture2D" uid="uid://ct22mxu23hy0g" path="res://ASSETS/SIGHTS/MenuBackground.png" id="2_8v6e1"]
 
 [sub_resource type="SystemFont" id="SystemFont_jp1o1"]
 
@@ -13,19 +13,19 @@ font = SubResource("FontVariation_otu65")
 font_size = 60
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbmn8"]
-atlas = ExtResource("1_6l33u")
+atlas = ExtResource("2_8v6e1")
 region = Rect2(0, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfbvc"]
-atlas = ExtResource("1_6l33u")
+atlas = ExtResource("2_8v6e1")
 region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqf08"]
-atlas = ExtResource("1_6l33u")
+atlas = ExtResource("2_8v6e1")
 region = Rect2(640, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wv0ri"]
-atlas = ExtResource("1_6l33u")
+atlas = ExtResource("2_8v6e1")
 region = Rect2(960, 0, 320, 320)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_26dr6"]
@@ -57,7 +57,7 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(400, 160)
-script = ExtResource("1_f0ryc")
+script = ExtResource("1_junr8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -75,11 +75,12 @@ grow_vertical = 2
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Start"
+text = "Noch einmal"
 
 [node name="Ende" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Verlassen"
+text = "Verlassen
+"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -87,8 +88,7 @@ offset_left = 416.0
 offset_top = 88.0
 offset_right = 736.0
 offset_bottom = 264.0
-text = "OTIS
-"
+text = "Danke fürs spielen!"
 label_settings = SubResource("LabelSettings_3x3k5")
 horizontal_alignment = 1
 vertical_alignment = 1

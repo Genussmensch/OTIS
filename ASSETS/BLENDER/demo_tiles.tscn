@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb1ms4vtlisnq"]
+
+[ext_resource type="PackedScene" uid="uid://denaqefbf4w4j" path="res://ASSETS/BLENDER/DemoTiles.glb" id="1_wkcxr"]
+
+[node name="DemoTiles" instance=ExtResource("1_wkcxr")]
