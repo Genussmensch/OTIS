@@ -1,8 +1,8 @@
 extends Control
 @onready var background = $Background
-
-# Called when the node enters the scene tree for the first time.
+@onready var music =$music
 func _ready():
+	music.play()
 	$VBoxContainer/Start.grab_focus()
 
 
@@ -10,13 +10,13 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Levels.tscn")
 
-func _on_exit_pressed():
-	get_tree().quit()
-
 
 func _on_tutorial_pressed():
-	get_tree().change_scene_to_file("res://Presentation Level1.tscn").
+	get_tree().change_scene_to_file("res://Presentation Level1.tscn")
+
+
+func _on_exit_pressed():
+	get_tree().quit()

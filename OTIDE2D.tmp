@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3p0qvx5hl5wo"]
+[gd_scene load_steps=11 format=3 uid="uid://b3p0qvx5hl5wo"]
 
 [ext_resource type="Texture2D" uid="uid://ct22mxu23hy0g" path="res://ASSETS/SIGHTS/MenuBackground.png" id="1_6l33u"]
 [ext_resource type="Script" path="res://OTIS.gd" id="1_f0ryc"]
-[ext_resource type="AudioStream" uid="uid://bga35ded1teoe" path="res://ASSETS/SOUNDS/TITLE CARD.mp3" id="3_qkwlj"]
 
 [sub_resource type="SystemFont" id="SystemFont_jp1o1"]
 
@@ -105,10 +104,6 @@ position = Vector2(664, 424)
 scale = Vector2(4.59699, 2.91995)
 sprite_frames = SubResource("SpriteFrames_26dr6")
 autoplay = "default"
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_qkwlj")
-volume_db = -11.575
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
