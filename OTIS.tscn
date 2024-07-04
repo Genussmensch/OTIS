@@ -77,7 +77,11 @@ grow_vertical = 2
 layout_mode = 2
 text = "Start"
 
-[node name="Ende" type="Button" parent="VBoxContainer"]
+[node name="Tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Verlassen"
 
@@ -101,5 +105,7 @@ scale = Vector2(4.59699, 2.91995)
 sprite_frames = SubResource("SpriteFrames_26dr6")
 autoplay = "default"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Ende" to="." method="_on_ende_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_ende_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_ende_pressed"]

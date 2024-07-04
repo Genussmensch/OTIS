@@ -1,6 +1,6 @@
 extends GridMap
 
-@onready var tileset = preload("res://ASSETS/BLENDER/DemoTiles.tres")
+@onready var tileset = preload("res://ASSETS/BLENDER/LevelTiles.tres")
 var tileSelection
 var doors = []
 var enemies = []
@@ -44,11 +44,11 @@ func _ready():
 func draw_tiles(gridSize: Vector2i, offset: Vector2i, pattern: TileMap):
 	match level:
 		1:
-			tileSelection = 1
+			tileSelection = 5
 		2:
 			tileSelection = 3
 		3:
-			tileSelection = 5
+			tileSelection = 1
 		4:
 			tileSelection = 7
 		5:

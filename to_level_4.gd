@@ -12,5 +12,5 @@ func _process(delta):
 func attempt_to_exit():
 		dist_to_player = global_position.distance_to(player.global_position)
 		if dist_to_player < 2:
-			get_tree().change_scene_to_file("res://Presentation Level 4.tscn")
+			get_tree().change_scene_to_file("res://OTIS.tscn")
 	

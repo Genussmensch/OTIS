@@ -146,7 +146,6 @@ func getAllDamageFactors():
 		$CRITICAL.play() 
 	else:
 		critical = 1
-	
 	allFactors = critical * defaultFactor * temporaryFactor
 	return allFactors
 	
@@ -160,8 +159,7 @@ func feverStatus():
 	else:
 		if feveractive:
 			endFever()
-
-
+			
 func fever():
 	# Activate fever effects
 

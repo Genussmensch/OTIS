@@ -1,6 +1,6 @@
 extends GridMap
 
-@onready var tileset = preload("res://ASSETS/BLENDER/DemoTiles.tres")
+@onready var tileset = preload("res://ASSETS/BLENDER/LevelTiles.tres")
 var tileSelection
 var doors = []
 var enemies = []

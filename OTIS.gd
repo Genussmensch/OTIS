@@ -12,8 +12,11 @@ func _process(delta):
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Presentation Level1.tscn")
+	get_tree().change_scene_to_file("res://Levels.tscn")
 
-func _on_ende_pressed():
+func _on_exit_pressed():
 	get_tree().quit()
 
+
+func _on_tutorial_pressed():
+	get_tree().change_scene_to_file("res://Presentation Level1.tscn").
