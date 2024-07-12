@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0ru64a1wb6oj"]
+
+[ext_resource type="PackedScene" uid="uid://ka4r74wwn71f" path="res://ASSETS/BLENDER/RAMILE.glb" id="1_ijpds"]
+
+[node name="BODY" instance=ExtResource("1_ijpds")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="U4" parent="." index="0"]
+transform = Transform3D(1, 8.73214e-08, -5.87304e-06, 8.74228e-08, -1, 1.72536e-05, -5.87304e-06, -1.72536e-05, -1, 0.0114602, 4, 0.0390491)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "U4Action_001"

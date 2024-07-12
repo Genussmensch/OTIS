@@ -26,7 +26,7 @@ func interact():
 
 func collect():
 	player.collect()
-	player.exp += 22
+	player.exp += 2
 	if player.exp >= player.max_exp:
 		player.exp -= player.max_exp
 		player.level_up()
